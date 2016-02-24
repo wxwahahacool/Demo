@@ -29,8 +29,9 @@ public class LoginPage extends BasePage {
 			"profile");
 
 	public void typeEmailInputBox(String email) throws Exception {
+		open("http://www.zhihu.com");
 		switchToLogin();
-		typeQuick(loginEmailInputBox, email);
+		type(loginEmailInputBox, email);
 	}
 
 	public void typePasswordInputBox(String password) throws Exception {
@@ -53,8 +54,8 @@ public class LoginPage extends BasePage {
 
 	public void switchToLogin() throws Exception
 	{
-		Locator registerButton=new Locator("//div[@class='title']/a[@href and text()='登录']");
-		click(registerButton);
+		Locator clickToLoginButton=new Locator("clickToLoginButton");
+		click(clickToLoginButton);
 	}
 	
 }
